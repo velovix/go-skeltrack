@@ -1,5 +1,5 @@
-// skeltrack is a Go binding of the Skeltrack library by Joaquim Rocha, which
-// can be found at github.com/joaquimrocha/Skeltrack.
+// Package skeltrack is a Go binding of the Skeltrack library by Joaquim Rocha,
+// which can be found at github.com/joaquimrocha/Skeltrack.
 package skeltrack
 
 /*
