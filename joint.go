@@ -49,7 +49,7 @@ type Joint struct {
 }
 
 // Type returns the type of joint the Joint object represents.
-func (joint *Joint) Type() JointID {
+func (joint Joint) Type() JointID {
 
 	if joint.joint == nil {
 		panic("cannot get the type of a nil Joint object")
@@ -60,7 +60,7 @@ func (joint *Joint) Type() JointID {
 
 // Coords returns the real-world coordinates of the Joint object in
 // millimeters.
-func (joint *Joint) Coords() (int, int, int) {
+func (joint Joint) Coords() (int, int, int) {
 
 	if joint.joint == nil {
 		panic("cannot get the coordinates of a nil Joint object")
@@ -71,7 +71,7 @@ func (joint *Joint) Coords() (int, int, int) {
 
 // ScreenCoords returns the screen coordinates of the Joint object to make
 // creating a skeleton display on-screen easier.
-func (joint *Joint) ScreenCoords() (int, int) {
+func (joint Joint) ScreenCoords() (int, int) {
 
 	if joint.joint == nil {
 		panic("cannot get the screen coordinates of a nil Joint object")
@@ -83,7 +83,7 @@ func (joint *Joint) ScreenCoords() (int, int) {
 // Free frees the memory of the Joint object. The Joint object is unusable
 // after this point. This should be done before a Joint object falls out of
 // scope.
-func (joint *Joint) Free() {
+func (joint Joint) Free() {
 
 	if joint.joint != nil {
 		C.skeltrack_joint_free(joint.joint)
